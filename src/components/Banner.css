@@ -85,7 +85,7 @@
 .banner__button {
     display: flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: flex-end;
     align-items: center;
     cursor: pointer;
     outline: none;
