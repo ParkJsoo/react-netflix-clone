@@ -15,7 +15,6 @@ export default function Banner() {
   const fetchData = async () => {
     // 현재 상영 중인 영화 정보를 가져오기(여러 영화)
     const request = await axios.get(requests.fetchNowPlaying);
-    console.log(request);
 
     // 여러 영화 중 영화 하나의 ID를 가져오기
     const movieId = request.data.results[Math.floor(Math.random() * request.data.results.length)].id;
@@ -25,7 +24,6 @@ export default function Banner() {
       params: {append_to_response: 'videos'}
     });
 
-    console.log('movieDetail', movieDetail);
     setMovie(movieDetail);
   };
 
@@ -33,7 +31,6 @@ export default function Banner() {
     return str?.length > n ? str.substring(0, n - 1) + '...' : str;
   }
 
-  console.log('movie', movie)
   if (!isClicked) {
     return (
       <header className="banner"
@@ -88,7 +85,7 @@ const Iframe = styled.iframe`
   z-index: -1;
   opacity: 0.65;
   border: none;
-  
+
   &::after {
     content: '';
     position: absolute;
