@@ -38,7 +38,7 @@ export default function SearchPage() {
       <section className="search-container">
         {searchResults.map((movie) => {
           if (movie.backdrop_path !== null && movie.media_type !== 'person') {
-            const movieImageUrl = 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path
+            const movieImageUrl = 'https://image.tmdb.org/t/p/w500' + movie.backdrop_path;
             return (
               <div className="movie" key={movie.id}>
                 <div onClick={() => navigate(`/${movie.id}`)} className="movie__column-poster">
